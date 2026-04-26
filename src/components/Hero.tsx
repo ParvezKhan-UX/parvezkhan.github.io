@@ -1,9 +1,8 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
 import { personal } from "@/data/portfolio";
 import { LinkedInIcon, BehanceIcon, MailIcon, ArrowRight, DownloadIcon, MapPinIcon } from "@/components/Icons";
-
-import { motion, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -23,128 +22,53 @@ const itemVariants: Variants = {
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      style={{
-        maxWidth: 1152,
-        margin: "0 auto",
-        padding: "6rem 1.5rem 4rem",
-        position: "relative",
-      }}
-    >
+    <section id="hero" className="w-full max-w-6xl mx-auto pt-24 pb-16 px-6 relative">
       <div className="glow-left" />
       <div className="glow-right" />
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-      >
+      <motion.div variants={containerVariants} initial="hidden" animate="show">
         {/* Available badge */}
-        <motion.div
-          variants={itemVariants}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <span
-            className="pulse-dot"
-            style={{
-              display: "inline-block",
-              width: 8,
-              height: 8,
-              borderRadius: "50%",
-              background: "#22c55e",
-            }}
-          />
-          <span
-            style={{
-              fontSize: "0.62rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#52525b",
-            }}
-          >
+        <motion.div variants={itemVariants} className="flex items-center gap-2 mb-8">
+          <span className="inline-block w-2 h-2 rounded-full bg-green-500 pulse-dot" />
+          <span className="text-[0.62rem] font-bold tracking-[0.18em] uppercase text-zinc-600">
             AVAILABLE FOR PROJECTS
           </span>
         </motion.div>
 
         {/* Two-column grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "2rem",
-            alignItems: "start",
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left — name + title + buttons */}
           <div>
             <motion.h1
               variants={itemVariants}
-              style={{
-                fontSize: "clamp(3.5rem, 8vw, 6.5rem)",
-                fontWeight: 900,
-                lineHeight: 1,
-                letterSpacing: "-0.03em",
-                textTransform: "uppercase",
-                marginBottom: "1.5rem",
-              }}
+              className="text-[clamp(3.5rem,8vw,6.5rem)] font-black leading-none tracking-[-0.03em] uppercase mb-6"
             >
-              <span style={{ color: "#000" }}>{personal.nameFirst.toUpperCase()}</span>
+              <span className="text-black">{personal.nameFirst.toUpperCase()}</span>
               <br />
-              <span style={{ color: "#a1a1aa" }}>{personal.nameLast.toUpperCase()}</span>
+              <span className="text-zinc-400">{personal.nameLast.toUpperCase()}</span>
             </motion.h1>
 
             {/* Role badge */}
-            <motion.div
-              variants={itemVariants}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.75rem",
-                marginBottom: "2rem",
-              }}
-            >
-              <div style={{ width: 28, height: 1, background: "#a1a1aa" }} />
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-8">
+              <div className="w-7 h-px bg-zinc-400" />
               <div>
-                <div
-                  style={{
-                    fontSize: "0.68rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "#000",
-                  }}
-                >
+                <div className="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-black">
                   {personal.title.toUpperCase()}
                 </div>
-                <div
-                  style={{
-                    fontSize: "0.63rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "#a1a1aa",
-                  }}
-                >
+                <div className="text-[0.63rem] font-semibold tracking-[0.08em] uppercase text-zinc-400">
                   5+ YEARS EXPERIENCE
                 </div>
               </div>
             </motion.div>
 
             {/* CTA buttons */}
-            <motion.div variants={itemVariants} style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "1rem" }}>
-              <a href="#connect" className="btn-primary">
+            <motion.div variants={itemVariants} className="flex gap-3 flex-wrap mt-4">
+              <a href="#connect" className="inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white border border-black rounded-full text-[0.85rem] font-semibold tracking-[0.02em] no-underline transition-[padding] duration-250 ease-in-out hover:pr-8">
                 COLLABORATE <ArrowRight />
               </a>
               <a
                 href={personal.behance}
-                className="btn-secondary"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-black border-[1.5px] border-black rounded-full text-[0.85rem] font-semibold no-underline transition-colors duration-200 hover:bg-zinc-50"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -154,47 +78,23 @@ export default function Hero() {
           </div>
 
           {/* Right — tagline + location + social */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              gap: "1.5rem",
-              height: "100%",
-              paddingTop: "1rem",
-            }}
-          >
+          <div className="flex flex-col justify-between gap-6 h-full pt-4 md:pl-10">
             <motion.p
               variants={itemVariants}
-              style={{
-                fontSize: "0.95rem",
-                color: "#52525b",
-                lineHeight: 1.75,
-                maxWidth: 340,
-              }}
+              className="text-[0.95rem] text-zinc-600 leading-relaxed max-w-[340px]"
             >
               {personal.tagline}
             </motion.p>
 
             <motion.div variants={itemVariants}>
               {/* Location chip */}
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.4rem",
-                  fontSize: "0.75rem",
-                  color: "#71717a",
-                  fontWeight: 500,
-                  marginBottom: "1.5rem",
-                }}
-              >
+              <div className="inline-flex items-center gap-1.5 text-[0.75rem] text-zinc-500 font-medium mb-6">
                 <MapPinIcon size={14} />
                 {personal.location}
               </div>
 
               {/* Social icons */}
-              <div style={{ display: "flex", gap: "1.25rem" }}>
+              <div className="flex gap-5">
                 {[
                   { href: personal.linkedin, icon: <LinkedInIcon />, label: "LinkedIn" },
                   { href: personal.behance, icon: <BehanceIcon />, label: "Behance" },
@@ -206,13 +106,7 @@ export default function Hero() {
                     target={label !== "Email" ? "_blank" : undefined}
                     rel={label !== "Email" ? "noopener noreferrer" : undefined}
                     aria-label={label}
-                    style={{
-                      color: "#a1a1aa",
-                      transition: "color 0.2s",
-                      display: "inline-flex",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
+                    className="text-zinc-400 transition-colors duration-200 hover:text-black inline-flex"
                   >
                     {icon}
                   </a>

@@ -4,47 +4,17 @@ import { personal } from "@/data/portfolio";
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        borderTop: "1px solid #f4f4f5",
-        padding: "2rem 1.5rem",
-        background: "#fff",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1152,
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "1rem",
-        }}
-      >
-        <span style={{ fontSize: "0.75rem", color: "#a1a1aa" }}>
+    <footer className="border-t border-zinc-100 py-8 px-6 bg-white">
+      <div className="w-full max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-4">
+        <span className="text-[0.75rem] text-zinc-400">
           © {new Date().getFullYear()} {personal.nameShort}. All rights reserved.
         </span>
-        <div
-          style={{
-            display: "flex",
-            gap: "1.5rem",
-            alignItems: "center",
-          }}
-        >
+        <div className="flex gap-6 items-center">
           <a
             href={personal.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              fontSize: "0.72rem",
-              color: "#a1a1aa",
-              textDecoration: "none",
-              fontWeight: 500,
-              transition: "color 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
+            className="text-[0.72rem] text-zinc-400 no-underline font-medium transition-colors duration-200 hover:text-black"
           >
             LinkedIn
           </a>
@@ -52,34 +22,18 @@ export default function Footer() {
             href={personal.behance}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              fontSize: "0.72rem",
-              color: "#a1a1aa",
-              textDecoration: "none",
-              fontWeight: 500,
-              transition: "color 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
+            className="text-[0.72rem] text-zinc-400 no-underline font-medium transition-colors duration-200 hover:text-black"
           >
             Behance
           </a>
           <a
             href={`mailto:${personal.email}`}
-            style={{
-              fontSize: "0.72rem",
-              color: "#a1a1aa",
-              textDecoration: "none",
-              fontWeight: 500,
-              transition: "color 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
+            className="text-[0.72rem] text-zinc-400 no-underline font-medium transition-colors duration-200 hover:text-black"
           >
             Email
           </a>
         </div>
-        <span style={{ fontSize: "0.75rem", color: "#a1a1aa" }}>
+        <span className="text-[0.75rem] text-zinc-400">
           Designed &amp; Built with ♥
         </span>
       </div>

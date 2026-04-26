@@ -20,117 +20,65 @@ export default function Projects() {
     active === "all" ? projects : projects.filter((p) => p.type === active);
 
   return (
-    <section
-      id="projects"
-      style={{ maxWidth: 1152, margin: "0 auto", padding: "5rem 1.5rem" }}
-    >
+    <section id="projects" className="w-full max-w-6xl mx-auto py-20 px-6">
       {/* Header + filter row */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-          marginBottom: "3rem",
-          flexWrap: "wrap",
-          gap: "1rem",
-        }}
-      >
+      <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
         <div>
-          <p className="section-label" style={{ marginBottom: "0.5rem" }}>
-            — PORTFOLIO
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3.2rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Featured <span style={{ color: "#a1a1aa" }}>Works</span>
+          <p className="section-label mb-2">— PORTFOLIO</p>
+          <h2 className="text-[clamp(2rem,5vw,3.2rem)] font-extrabold tracking-[-0.02em]">
+            Featured <span className="text-zinc-400">Works</span>
           </h2>
         </div>
 
         {/* Filter buttons */}
-        <div style={{ display: "flex", gap: "0.5rem" }}>
+        <div className="flex gap-2">
           {FILTERS.map(({ id, label, prefix }) => (
             <button
               key={id}
-              className={`filter-btn ${active === id ? "active" : ""}`}
+              className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[0.75rem] font-medium border transition-all duration-200 cursor-pointer ${
+                active === id
+                  ? "bg-black text-white border-black"
+                  : "bg-white text-zinc-600 border-zinc-200 hover:bg-black hover:text-white hover:border-black"
+              }`}
               onClick={() => setActive(id)}
             >
-              <span style={{ opacity: 0.7 }}>{prefix}</span> {label}
+              <span className="opacity-70">{prefix}</span> {label}
             </button>
           ))}
         </div>
       </div>
 
       {/* Project grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "1.5rem",
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filtered.map((proj) => (
-          <div key={proj.id} className="project-card">
+          <div key={proj.id} className="border border-zinc-100 rounded-xl overflow-hidden bg-white transition-all duration-300 cursor-pointer hover:border-zinc-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)]">
             {/* Preview image */}
-            <div
-              style={{
-                position: "relative",
-                aspectRatio: "16/10",
-                background: "#f4f4f5",
-              }}
-            >
+            <div className="relative aspect-[16/10] bg-zinc-100">
               <Image
                 src={proj.image}
                 alt={proj.name}
                 fill
-                sizes="(max-width: 920px) 50vw, 440px"
-                style={{ objectFit: "cover" }}
+                sizes="(max-width: 920px) 100vw, 50vw"
+                className="object-cover"
               />
               {/* Status badge */}
               <span
-                style={{
-                  position: "absolute",
-                  top: "0.75rem",
-                  right: "0.75rem",
-                  fontSize: "0.6rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.08em",
-                  padding: "0.2rem 0.6rem",
-                  borderRadius: "9999px",
-                  background:
-                    proj.status === "Live"
-                      ? "#dcfce7"
-                      : proj.status === "Case Study"
-                      ? "#dbeafe"
-                      : "#fef9c3",
-                  color:
-                    proj.status === "Live"
-                      ? "#166534"
-                      : proj.status === "Case Study"
-                      ? "#1e40af"
-                      : "#854d0e",
-                }}
+                className={`absolute top-3 right-3 text-[0.6rem] font-bold tracking-[0.08em] px-2.5 py-1 rounded-full ${
+                  proj.status === "Live"
+                    ? "bg-green-100 text-green-800"
+                    : proj.status === "Case Study"
+                    ? "bg-blue-100 text-blue-800"
+                    : "bg-yellow-100 text-yellow-800"
+                }`}
               >
                 {proj.status}
               </span>
             </div>
 
             {/* Card body */}
-            <div style={{ padding: "1.25rem" }}>
+            <div className="p-5">
               {/* Category */}
-              <p
-                style={{
-                  fontSize: "0.6rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  color: "#a1a1aa",
-                  marginBottom: "0.35rem",
-                }}
-              >
+              <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-zinc-400 mb-1.5">
                 {proj.category === "ux"
                   ? "UX DESIGN"
                   : proj.category === "mobile"
@@ -138,47 +86,22 @@ export default function Projects() {
                   : "WEB APP"}
               </p>
 
-              <h3
-                style={{
-                  fontSize: "1rem",
-                  fontWeight: 700,
-                  marginBottom: "0.4rem",
-                }}
-              >
+              <h3 className="text-base font-bold mb-1.5">
                 {proj.name}
               </h3>
 
-              <p
-                style={{
-                  fontSize: "0.82rem",
-                  color: "#71717a",
-                  lineHeight: 1.65,
-                  marginBottom: "1rem",
-                }}
-              >
+              <p className="text-[0.82rem] text-zinc-500 leading-[1.65] mb-4 line-clamp-2">
                 {proj.description}
               </p>
 
               {/* Tags */}
               <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "0.35rem",
-                  marginBottom: proj.links.length > 0 ? "1rem" : 0,
-                }}
+                className={`flex flex-wrap gap-1.5 ${proj.links.length > 0 ? "mb-4" : "mb-0"}`}
               >
                 {proj.tags.map((tag) => (
                   <span
                     key={tag}
-                    style={{
-                      fontSize: "0.6rem",
-                      fontWeight: 600,
-                      padding: "0.18rem 0.55rem",
-                      background: "#f4f4f5",
-                      borderRadius: "9999px",
-                      color: "#52525b",
-                    }}
+                    className="text-[0.6rem] font-semibold px-2 py-1 bg-zinc-100 rounded-full text-zinc-600"
                   >
                     {tag}
                   </span>
@@ -187,29 +110,14 @@ export default function Projects() {
 
               {/* Links */}
               {proj.links.length > 0 && (
-                <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                <div className="flex gap-3 flex-wrap">
                   {proj.links.map((link) => (
                     <a
                       key={link.url}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.3rem",
-                        fontSize: "0.75rem",
-                        fontWeight: 600,
-                        color: "#000",
-                        textDecoration: "none",
-                        transition: "opacity 0.2s",
-                      }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.opacity = "0.7")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.opacity = "1")
-                      }
+                      className="inline-flex items-center gap-1 text-[0.75rem] font-semibold text-black no-underline transition-opacity duration-200 hover:opacity-70"
                     >
                       {link.label} <ExternalLinkIcon />
                     </a>
@@ -222,24 +130,12 @@ export default function Projects() {
       </div>
 
       {/* Behance CTA */}
-      <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+      <div className="text-center mt-10">
         <a
           href="https://www.behance.net/mpkhasan62"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            fontSize: "0.8rem",
-            fontWeight: 600,
-            color: "#52525b",
-            textDecoration: "none",
-            letterSpacing: "0.04em",
-            transition: "color 0.2s",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#52525b")}
+          className="inline-flex items-center gap-2 text-[0.8rem] font-semibold text-zinc-600 no-underline tracking-[0.04em] transition-colors duration-200 hover:text-black"
         >
           VIEW ALL ON BEHANCE <ArrowRight />
         </a>

@@ -14,7 +14,7 @@ import AnimateReveal from "@/components/AnimateReveal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen grid-bg">
+    <div className="w-full min-h-screen grid-bg">
       <Navbar />
       <main>
         <Hero />

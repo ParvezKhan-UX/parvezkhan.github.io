@@ -5,99 +5,38 @@ import { AwardIcon, GraduationIcon } from "@/components/Icons";
 
 export default function Education() {
   return (
-    <section
-      id="education"
-      style={{ maxWidth: 1152, margin: "0 auto", padding: "5rem 1.5rem" }}
-    >
+    <section id="education" className="w-full max-w-6xl mx-auto py-20 px-6">
       {/* Header */}
-      <div style={{ marginBottom: "3rem" }}>
-        <p className="section-label" style={{ marginBottom: "0.5rem" }}>
-          — LEARNING
-        </p>
-        <h2
-          style={{
-            fontSize: "clamp(2rem, 5vw, 3.2rem)",
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Education &amp; <span style={{ color: "#a1a1aa" }}>Certificates</span>
+      <div className="mb-12">
+        <p className="section-label mb-2">— LEARNING</p>
+        <h2 className="text-[clamp(2rem,5vw,3.2rem)] font-extrabold tracking-[-0.02em]">
+          Education &amp; <span className="text-zinc-400">Certificates</span>
         </h2>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "3rem",
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Education */}
         <div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              marginBottom: "1.5rem",
-            }}
-          >
+          <div className="flex items-center gap-2 mb-6">
             <GraduationIcon size={18} />
-            <h3
-              style={{
-                fontSize: "0.8rem",
-                fontWeight: 700,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-              }}
-            >
+            <h3 className="text-[0.8rem] font-bold tracking-[0.1em] uppercase">
               Education
             </h3>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div className="flex flex-col gap-4">
             {education.map((edu, i) => (
               <div
                 key={i}
-                style={{
-                  border: "1px solid #f4f4f5",
-                  borderRadius: 12,
-                  padding: "1.25rem",
-                  background: "#fff",
-                  transition: "border-color 0.3s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.borderColor = "#d4d4d8")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.borderColor = "#f4f4f5")
-                }
+                className="border border-zinc-100 rounded-xl p-5 bg-white transition-colors duration-300 hover:border-zinc-300"
               >
-                <p
-                  style={{
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    marginBottom: "0.3rem",
-                  }}
-                >
+                <p className="text-[0.95rem] font-bold mb-1.5">
                   {edu.degree}
                 </p>
-                <p
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "#71717a",
-                    marginBottom: "0.4rem",
-                  }}
-                >
+                <p className="text-[0.8rem] text-zinc-500 mb-1.5">
                   {edu.institution}
                 </p>
-                <span
-                  style={{
-                    fontSize: "0.65rem",
-                    color: "#a1a1aa",
-                    fontWeight: 500,
-                  }}
-                >
+                <span className="text-[0.65rem] text-zinc-400 font-medium">
                   {edu.period}
                 </span>
               </div>
@@ -105,45 +44,20 @@ export default function Education() {
           </div>
 
           {/* Languages */}
-          <div style={{ marginTop: "2rem" }}>
-            <p
-              style={{
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#a1a1aa",
-                marginBottom: "1rem",
-              }}
-            >
+          <div className="mt-8">
+            <p className="text-[0.7rem] font-bold tracking-[0.12em] uppercase text-zinc-400 mb-4">
               Languages
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+            <div className="flex flex-col gap-2.5">
               {personal.languages.map((lang) => (
                 <div
                   key={lang.name}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "0.6rem 1rem",
-                    border: "1px solid #f4f4f5",
-                    borderRadius: 8,
-                    background: "#fff",
-                  }}
+                  className="flex justify-between items-center px-4 py-2.5 border border-zinc-100 rounded-lg bg-white"
                 >
-                  <span
-                    style={{ fontSize: "0.85rem", fontWeight: 600 }}
-                  >
+                  <span className="text-[0.85rem] font-semibold">
                     {lang.name}
                   </span>
-                  <span
-                    style={{
-                      fontSize: "0.65rem",
-                      color: "#71717a",
-                      fontWeight: 500,
-                    }}
-                  >
+                  <span className="text-[0.65rem] text-zinc-500 font-medium">
                     {lang.level}
                   </span>
                 </div>
@@ -154,70 +68,26 @@ export default function Education() {
 
         {/* Certificates */}
         <div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              marginBottom: "1.5rem",
-            }}
-          >
+          <div className="flex items-center gap-2 mb-6">
             <AwardIcon size={18} />
-            <h3
-              style={{
-                fontSize: "0.8rem",
-                fontWeight: 700,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-              }}
-            >
+            <h3 className="text-[0.8rem] font-bold tracking-[0.1em] uppercase">
               Certificates
             </h3>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div className="flex flex-col gap-4">
             {certificates.map((cert, i) => (
               <div
                 key={i}
-                style={{
-                  border: "1px solid #f4f4f5",
-                  borderRadius: 12,
-                  padding: "1.25rem",
-                  background: "#fff",
-                  transition: "border-color 0.3s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.borderColor = "#d4d4d8")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.borderColor = "#f4f4f5")
-                }
+                className="border border-zinc-100 rounded-xl p-5 bg-white transition-colors duration-300 hover:border-zinc-300"
               >
-                <p
-                  style={{
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    marginBottom: "0.3rem",
-                  }}
-                >
+                <p className="text-[0.95rem] font-bold mb-1.5">
                   {cert.title}
                 </p>
-                <p
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "#71717a",
-                    marginBottom: "0.4rem",
-                  }}
-                >
+                <p className="text-[0.8rem] text-zinc-500 mb-1.5">
                   {cert.issuer}
                 </p>
-                <span
-                  style={{
-                    fontSize: "0.65rem",
-                    color: "#a1a1aa",
-                    fontWeight: 500,
-                  }}
-                >
+                <span className="text-[0.65rem] text-zinc-400 font-medium">
                   {cert.period}
                 </span>
               </div>

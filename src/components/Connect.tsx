@@ -1,6 +1,6 @@
 "use client";
 
-import { contact, personal } from "@/data/portfolio";
+import { contact } from "@/data/portfolio";
 import { LinkedInIcon, BehanceIcon, MailIcon, PhoneIcon } from "@/components/Icons";
 
 function getIcon(type: string) {
@@ -20,36 +20,17 @@ function getIcon(type: string) {
 
 export default function Connect() {
   return (
-    <section
-      id="connect"
-      style={{ maxWidth: 1152, margin: "0 auto", padding: "5rem 1.5rem 8rem" }}
-    >
+    <section id="connect" className="w-full max-w-6xl mx-auto pt-20 pb-32 px-6">
       {/* Header */}
-      <div style={{ marginBottom: "3rem" }}>
-        <p className="section-label" style={{ marginBottom: "0.5rem" }}>
-          — AVAILABLE FOR WORK
-        </p>
-        <h2
-          style={{
-            fontSize: "clamp(2.2rem, 6vw, 3.8rem)",
-            fontWeight: 900,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Get In <span style={{ color: "#a1a1aa" }}>Touch</span>
+      <div className="mb-12">
+        <p className="section-label mb-2">— AVAILABLE FOR WORK</p>
+        <h2 className="text-[clamp(2.2rem,6vw,3.8rem)] font-black tracking-[-0.02em]">
+          Get In <span className="text-zinc-400">Touch</span>
         </h2>
       </div>
 
       {/* Intro blurb */}
-      <p
-        style={{
-          fontSize: "0.95rem",
-          color: "#71717a",
-          lineHeight: 1.8,
-          maxWidth: 480,
-          marginBottom: "3rem",
-        }}
-      >
+      <p className="text-[0.95rem] text-zinc-500 leading-relaxed max-w-[480px] mb-12">
         I&apos;m always open to discussing new projects, creative ideas, or
         opportunities to be part of your vision. Feel free to reach out!
       </p>
@@ -60,7 +41,7 @@ export default function Connect() {
           <a
             key={id}
             href={href}
-            className="contact-row"
+            className="flex items-center justify-between py-5 border-b border-zinc-100 cursor-pointer transition-colors duration-300 no-underline text-inherit hover:border-black group"
             target={type !== "phone" && type !== "mail" ? "_blank" : undefined}
             rel={
               type !== "phone" && type !== "mail"
@@ -68,47 +49,20 @@ export default function Connect() {
                 : undefined
             }
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1.5rem",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "0.7rem",
-                  color: "#a1a1aa",
-                  fontWeight: 500,
-                  minWidth: 22,
-                }}
-              >
+            <div className="flex items-center gap-6">
+              <span className="text-[0.7rem] text-zinc-400 font-medium min-w-[22px]">
                 {id}
               </span>
               <div>
-                <p
-                  style={{
-                    fontSize: "0.6rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: "#a1a1aa",
-                  }}
-                >
+                <p className="text-[0.6rem] font-bold tracking-[0.12em] uppercase text-zinc-400">
                   {label}
                 </p>
-                <p
-                  style={{
-                    fontSize: "0.92rem",
-                    fontWeight: 700,
-                    color: "#000",
-                  }}
-                >
+                <p className="text-[0.92rem] font-bold text-black mt-0.5">
                   {value}
                 </p>
               </div>
             </div>
-            <span style={{ color: "#a1a1aa" }}>{getIcon(type)}</span>
+            <span className="text-zinc-400">{getIcon(type)}</span>
           </a>
         ))}
       </div>
