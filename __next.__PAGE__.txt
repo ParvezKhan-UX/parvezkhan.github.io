@@ -1,15 +1,15 @@
 1:"$Sreact.fragment"
-2:I[45678,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-3:I[32177,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-4:I[79443,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-5:I[55786,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-6:I[87114,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-7:I[48005,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-8:I[15,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-9:I[95171,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-a:I[20227,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-b:I[13642,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/1208pdmn3quef.js"],"default"]
-c:I[97367,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js"],"OutletBoundary"]
+2:I[45678,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+3:I[32177,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+4:I[79443,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+5:I[55786,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+6:I[87114,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+7:I[48005,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+8:I[15,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+9:I[95171,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+a:I[20227,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+b:I[13642,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js","/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js"],"default"]
+c:I[97367,["/parvezkhan.github.io/_next/static/chunks/0fsi8lw5utejl.js","/parvezkhan.github.io/_next/static/chunks/0d3tkj33oycf2.js"],"OutletBoundary"]
 d:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"w-full min-h-screen grid-bg","children":[["$","$L2",null,{}],["$","main",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"delay":0.1,"children":["$","$L5",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L6",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L7",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L8",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L9",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$La",null,{}]}]]}],["$","$Lb",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/1208pdmn3quef.js","async":true}]],["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"czo7zUOHUEU2YY_pLfb0I"}
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"w-full min-h-screen grid-bg","children":[["$","$L2",null,{}],["$","main",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"delay":0.1,"children":["$","$L5",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L6",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L7",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L8",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$L9",null,{}]}],["$","$L4",null,{"delay":0.1,"children":["$","$La",null,{}]}]]}],["$","$Lb",null,{}]]}],[["$","script","script-0",{"src":"/parvezkhan.github.io/_next/static/chunks/0xw6_hff1tvid.js","async":true}]],["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"wLFs2AWIIs3uqucYvWMkp"}
 e:null
