@@ -13,8 +13,34 @@ import AnimateReveal from "@/components/AnimateReveal";
 // To update portfolio content, edit src/data/portfolio.ts only.
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Parvez Khan",
+    url: "https://parvezkhan-ux.github.io/parvezkhan.github.io/",
+    image: "https://parvezkhan-ux.github.io/parvezkhan.github.io/images/profile.png",
+    jobTitle: "UI/UX Designer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Freelance",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Dhaka",
+      addressCountry: "Bangladesh",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/md-parvez-khan/",
+      "https://www.behance.net/mpkhasan62",
+    ],
+  };
+
   return (
     <div className="w-full min-h-screen grid-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main>
         <Hero />
