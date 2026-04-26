@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      style={{ maxWidth: 920, margin: "0 auto", padding: "3rem 1.5rem" }}
+      style={{ maxWidth: 1152, margin: "0 auto", padding: "3rem 1.5rem" }}
     >
       <div
         className="hero-card"

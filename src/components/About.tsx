@@ -12,7 +12,7 @@ export default function About() {
   );
 
   return (
-    <section id="about" style={{ maxWidth: 920, margin: "0 auto", padding: "5rem 1.5rem" }}>
+    <section id="about" style={{ maxWidth: 1152, margin: "0 auto", padding: "5rem 1.5rem" }}>
       {/* Header */}
       <div style={{ marginBottom: "3rem" }}>
         <p className="section-label" style={{ marginBottom: "0.5rem" }}>— BIOGRAPHY</p>

@@ -22,7 +22,7 @@ export default function Connect() {
   return (
     <section
       id="connect"
-      style={{ maxWidth: 920, margin: "0 auto", padding: "5rem 1.5rem 8rem" }}
+      style={{ maxWidth: 1152, margin: "0 auto", padding: "5rem 1.5rem 8rem" }}
     >
       {/* Header */}
       <div style={{ marginBottom: "3rem" }}>
