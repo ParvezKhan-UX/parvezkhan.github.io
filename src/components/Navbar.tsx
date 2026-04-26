@@ -69,31 +69,6 @@ export default function Navbar() {
               {label}
             </a>
           ))}
-          {/* Social shortcuts */}
-          <div style={{ display: "flex", gap: "0.75rem", marginLeft: "0.5rem" }}>
-            <a
-              href={personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              style={{ color: "#a1a1aa", transition: "color 0.2s", display: "inline-flex" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
-            >
-              <LinkedInIcon size={15} />
-            </a>
-            <a
-              href={personal.behance}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Behance"
-              style={{ color: "#a1a1aa", transition: "color 0.2s", display: "inline-flex" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
-            >
-              <BehanceIcon size={16} />
-            </a>
-          </div>
         </div>
       </div>
     </nav>
