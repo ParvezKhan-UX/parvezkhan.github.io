@@ -3,22 +3,46 @@
 import { personal } from "@/data/portfolio";
 import { LinkedInIcon, BehanceIcon, MailIcon, ArrowRight, DownloadIcon, MapPinIcon } from "@/components/Icons";
 
+import { motion, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      style={{ maxWidth: 1152, margin: "0 auto", padding: "3rem 1.5rem" }}
+      style={{
+        maxWidth: 1152,
+        margin: "0 auto",
+        padding: "6rem 1.5rem 4rem",
+        position: "relative",
+      }}
     >
-      <div
-        className="hero-card"
-        style={{
-          borderRadius: 20,
-          padding: "3rem 3rem 2.5rem",
-          background: "#fff",
-        }}
+      <div className="glow-left" />
+      <div className="glow-right" />
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
       >
         {/* Available badge */}
-        <div
+        <motion.div
+          variants={itemVariants}
           style={{
             display: "flex",
             alignItems: "center",
@@ -47,7 +71,7 @@ export default function Hero() {
           >
             AVAILABLE FOR PROJECTS
           </span>
-        </div>
+        </motion.div>
 
         {/* Two-column grid */}
         <div
@@ -60,9 +84,10 @@ export default function Hero() {
         >
           {/* Left — name + title + buttons */}
           <div>
-            <h1
+            <motion.h1
+              variants={itemVariants}
               style={{
-                fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+                fontSize: "clamp(3.5rem, 8vw, 6.5rem)",
                 fontWeight: 900,
                 lineHeight: 1,
                 letterSpacing: "-0.03em",
@@ -73,10 +98,11 @@ export default function Hero() {
               <span style={{ color: "#000" }}>{personal.nameFirst.toUpperCase()}</span>
               <br />
               <span style={{ color: "#a1a1aa" }}>{personal.nameLast.toUpperCase()}</span>
-            </h1>
+            </motion.h1>
 
             {/* Role badge */}
-            <div
+            <motion.div
+              variants={itemVariants}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -109,10 +135,10 @@ export default function Hero() {
                   5+ YEARS EXPERIENCE
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA buttons */}
-            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <motion.div variants={itemVariants} style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "1rem" }}>
               <a href="#connect" className="btn-primary">
                 COLLABORATE <ArrowRight />
               </a>
@@ -124,7 +150,7 @@ export default function Hero() {
               >
                 VIEW WORK <DownloadIcon />
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right — tagline + location + social */}
@@ -134,9 +160,12 @@ export default function Hero() {
               flexDirection: "column",
               justifyContent: "space-between",
               gap: "1.5rem",
+              height: "100%",
+              paddingTop: "1rem",
             }}
           >
-            <p
+            <motion.p
+              variants={itemVariants}
               style={{
                 fontSize: "0.95rem",
                 color: "#52525b",
@@ -145,51 +174,54 @@ export default function Hero() {
               }}
             >
               {personal.tagline}
-            </p>
+            </motion.p>
 
-            {/* Location chip */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                fontSize: "0.75rem",
-                color: "#71717a",
-                fontWeight: 500,
-              }}
-            >
-              <MapPinIcon size={14} />
-              {personal.location}
-            </div>
+            <motion.div variants={itemVariants}>
+              {/* Location chip */}
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  fontSize: "0.75rem",
+                  color: "#71717a",
+                  fontWeight: 500,
+                  marginBottom: "1.5rem",
+                }}
+              >
+                <MapPinIcon size={14} />
+                {personal.location}
+              </div>
 
-            {/* Social icons */}
-            <div style={{ display: "flex", gap: "1.25rem" }}>
-              {[
-                { href: personal.linkedin, icon: <LinkedInIcon />, label: "LinkedIn" },
-                { href: personal.behance, icon: <BehanceIcon />, label: "Behance" },
-                { href: `mailto:${personal.email}`, icon: <MailIcon />, label: "Email" },
-              ].map(({ href, icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={label !== "Email" ? "_blank" : undefined}
-                  rel={label !== "Email" ? "noopener noreferrer" : undefined}
-                  aria-label={label}
-                  style={{
-                    color: "#a1a1aa",
-                    transition: "color 0.2s",
-                    display: "inline-flex",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
-                >
-                  {icon}
-                </a>
-              ))}
-            </div>
+              {/* Social icons */}
+              <div style={{ display: "flex", gap: "1.25rem" }}>
+                {[
+                  { href: personal.linkedin, icon: <LinkedInIcon />, label: "LinkedIn" },
+                  { href: personal.behance, icon: <BehanceIcon />, label: "Behance" },
+                  { href: `mailto:${personal.email}`, icon: <MailIcon />, label: "Email" },
+                ].map(({ href, icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={label !== "Email" ? "_blank" : undefined}
+                    rel={label !== "Email" ? "noopener noreferrer" : undefined}
+                    aria-label={label}
+                    style={{
+                      color: "#a1a1aa",
+                      transition: "color 0.2s",
+                      display: "inline-flex",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#a1a1aa")}
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -17,7 +17,7 @@ export default function Home() {
     <div className="min-h-screen grid-bg">
       <Navbar />
       <main>
-        <AnimateReveal><Hero /></AnimateReveal>
+        <Hero />
         <AnimateReveal delay={0.1}><About /></AnimateReveal>
         <AnimateReveal delay={0.1}><Skills /></AnimateReveal>
         <AnimateReveal delay={0.1}><Projects /></AnimateReveal>
